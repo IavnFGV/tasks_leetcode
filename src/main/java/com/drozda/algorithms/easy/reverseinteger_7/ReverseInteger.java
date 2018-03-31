@@ -4,21 +4,15 @@ public class ReverseInteger {
 
 
     public static int reverse(int x) {
-        long rev= 0;
-        while( x != 0){
-            rev= rev*10 + x % 10;
-            x= x/10;
-            if( rev > Integer.MAX_VALUE || rev < Integer.MIN_VALUE)
-                return 0;
+        double res = 0;
+        while (x != 0) {
+            res = res * 10 + x % 10;
+            x = x / 10;
         }
-        return (int) rev;
-    }
 
+        if (res > Integer.MAX_VALUE || res < Integer.MIN_VALUE)
+            res = 0;
 
-    private static int countDigits(int input) {
-        return (int)
-                Math.log10(
-                        Math.abs(input)
-                ) + 1;
+        return (int) res;
     }
 }
