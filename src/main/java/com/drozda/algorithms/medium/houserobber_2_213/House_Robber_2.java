@@ -1,7 +1,24 @@
-package com.drozda.algorithms.easy.houserobber_198;
+package com.drozda.algorithms.medium.houserobber_2_213;
 
-public class HouseRobber {
+import java.util.Arrays;
+
+public class House_Robber_2 {
+
     public static int rob(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        return Math.max(
+                robStraight(Arrays.copyOfRange(nums,0,nums.length-1)),
+                robStraight(Arrays.copyOfRange(nums,1,nums.length))
+        );
+    }
+
+
+    public static int robStraight(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
