@@ -8,6 +8,7 @@ public class FibTailRecursionTest {
 
     @Test
     public void calc() {
-        assertEquals(144l,new FibTailRecursion().calc(12));
+        System.out.println(new FibTailRecursion().calcBigDecimal(678));
+//        assertEquals(144l,new FibTailRecursion().calc(12));
     }
 }
